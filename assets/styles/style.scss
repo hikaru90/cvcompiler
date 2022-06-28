@@ -1,0 +1,25 @@
+@import 'vue-formulate';
+@import 'fonts';
+
+*{
+  // box-shadow: inset 0 0 0 1px rgb(212, 212, 212);
+  @apply font-body;
+}
+
+@media print {
+  body{
+    background-color: white !important;
+  }
+  body * {
+    @apply invisible m-0;
+  }
+  #a4-canvas, #a4-canvas * {
+    @apply visible;
+  }
+  #container, #a4-container{
+    @apply m-0 p-0 w-full;
+  }
+  #a4-canvas {
+    @apply bg-transparent w-full h-full shadow-none;
+  }
+}
