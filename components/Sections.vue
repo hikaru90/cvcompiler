@@ -1,9 +1,9 @@
 <template>
   <div class="flex-grow">
     <div v-for="(section, index) in sections" :key="'section' + index" class="">
-      <Title>{{section.title}}</Title>
+      
 
-      <component :is="section.type+'Content'" :section="section" ></component>
+      <component :is="section.type+'Content'" :section="section"></component>
       
     </div>
   </div>

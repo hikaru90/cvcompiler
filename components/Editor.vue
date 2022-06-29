@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/2 bg-gray-100 border-r border-gray-200 p-2 overflow-y-auto">
+  <div id="editor" class="w-1/2 bg-gray-100 border-r border-gray-200 p-2 overflow-y-auto">
     <EditorPersonendaten />
     <EditorFertigkeiten />
     <EditorLanguages />

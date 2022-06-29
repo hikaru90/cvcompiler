@@ -15,7 +15,7 @@
           <Select
             :value="section.type"
             @handle="handleInput('type', ...arguments)"
-            :options="[{value: 'SectionMeilensteine', text: 'Meilensteine'},{value: 'SectionText', text: 'Text'}]"
+            :options="[{value: 'SectionMeilensteine', text: 'Meilensteine'},{value: 'SectionMargin', text: 'Margin'}]"
             class="p-05 w-1/5"
             >Typ</Select
           >
@@ -74,12 +74,12 @@
     },
 
     methods: {
-      ...mapMutations(["updateSection", "moveSection"]),
+      ...mapMutations(["updateSection", "moveSection", "deleteSection"]),
       handleInput(field, payload) {
         this.updateSection({ index: this.index, field: field, content: payload });
       },
       handleDelete() {
-        this.$emit("delete");
+        this.deleteSection({index: this.index})
       },
       shiftUp() {
         if (this.index > 0) {

@@ -1,6 +1,6 @@
 <template>
-  <div id="a4-container" class="pt-2 w-1/2 fixed ml-1/2 flex items-center justify-center mt-3">
-    <div id="a4-canvas" class="bg-white shadow w-42 h-60 rounded-xs text-black px-3 py-6">
+  <div id="a4-container" class="pt-2 w-1/2 absolute ml-1/2 flex items-center justify-center mt-3">
+    <div id="a4-canvas" class="bg-white shadow w-42 min-h-60 rounded-xs text-black px-3 py-6">
       <div>
         <A4Header />
         <A4Content />

@@ -17,7 +17,7 @@ export const state = () => ({
   skillset:
     '[{"name":"Test Webapps", "proficiency": "100", "duration": "8+"},{"name":"Test Webapps", "proficiency": "60", "duration": "5+"},{"name":"Test Webapps", "proficiency": "20", "duration": "2+"}]',
   languageset:
-    '[{"name":"German", "proficiency": "100", "level": "Proficient|C2"},{"name":"English", "proficiency": "80", "level": "Proficient|C1"}]',
+    '[{"name":"German", "proficiency": "100", "duration": "Proficient|C2"},{"name":"English", "proficiency": "80", "duration": "Proficient|C1"}]',
   sections: [],
 });
 
@@ -104,6 +104,10 @@ export const mutations = {
   addSection(state) {
     state.sections.push({ type: "SectionMeilensteine", title: "Work Experience", content: [] });
   },
+  deleteSection(state, payload){
+    const array = state.sections
+    array.splice(payload.index,1)
+  },
   addMilestone(state, payload) {
     state.sections[payload.index].content.push({
       heading: "Heading",
@@ -153,6 +157,11 @@ export const mutations = {
   moveProject(state, payload){
     const array = state.sections[payload.sectionIndex].content[payload.milestoneIndex].milestones[payload.stepIndex].projects
     array.splice(payload.to, 0, array.splice(payload.from, 1)[0]);
+  },
+
+  updateMargin(state, payload) {
+    console.log('update margin');
+    state.sections[payload.sectionIndex][payload.field] = payload.content
   },
 
 };

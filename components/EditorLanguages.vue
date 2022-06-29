@@ -10,7 +10,7 @@
           @down="down(index)"
           :name="skill.name"
           :proficiency="skill.proficiency"
-          :duration="skill.level"
+          :duration="skill.duration"
         />
       </div>
       <div

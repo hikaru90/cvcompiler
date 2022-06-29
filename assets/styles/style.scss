@@ -9,6 +9,10 @@
 @media print {
   body{
     background-color: white !important;
+    @apply m-0;
+  }
+  #editor{
+    @apply hidden;
   }
   body * {
     @apply invisible m-0;
@@ -19,7 +23,14 @@
   #container, #a4-container{
     @apply m-0 p-0 w-full;
   }
+  #a4-container{
+    @apply static;
+  }
   #a4-canvas {
-    @apply bg-transparent w-full h-full shadow-none;
+    @apply bg-white w-full h-full shadow-none static p-0;
+  }
+
+  @page {
+    margin: 6em 3em;
   }
 }

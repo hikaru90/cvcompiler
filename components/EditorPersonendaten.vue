@@ -35,7 +35,7 @@
         />
         <FormulateInput
           type="text"
-          label="Bildungsgrad & Geburt"
+          label="Bildung & Geburt"
           validation="required"
           v-model="education"
           class="p-05 w-1/5"
@@ -73,7 +73,6 @@
         <FormulateInput
           type="text"
           label="Land"
-          validation="required"
           v-model="country"
           class="p-05 w-1/5"
         />

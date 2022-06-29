@@ -6,7 +6,7 @@
           <template #left>
             <div class="text-base">
               <div>{{ street }} {{ number }}</div>
-              <div>{{ postcode }} {{ city }}, {{ country }}</div>
+              <div>{{ postcode }} {{ city }}<template v-if="country">, {{ country }}</template></div>
             </div>
           </template>
           <template #right>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="mb-05">
+    <div class="mb-1">
       <Columns itemAlignment="items-center">
         <template #left>
           <ProfilePicture class="" />
