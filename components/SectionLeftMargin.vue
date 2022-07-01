@@ -1,5 +1,8 @@
 <template>
-  <div :style="{height: section.margin * 16 + 'px'}" class="w-full">
+  <div class="flex-grow">
+    <Input :value="margin" @handle="handleInput('margin', ...arguments)" class="p-05 w-full"
+      >Abstand</Input
+    >
   </div>
 </template>
 
@@ -12,13 +15,26 @@ import { mapMutations } from 'vuex';
         type: Object,
         required: true,
       },
+      index:{
+        type: Number,
+        required: true,
+      },
+    },
+
+    computed:{
+      margin(){
+        if(this.section.margin){
+          return this.section.margin
+        }
+        return '0'
+      }
     },
 
     methods:{
-      ...mapMutations(["updateMargin"]),
+      ...mapMutations(["updateLeftMargin"]),
       handleInput(field, payload) {
         console.log("handle input");
-        this.updateMargin({
+        this.updateLeftMargin({
           sectionIndex: this.index,
           field: field,
           content: payload,

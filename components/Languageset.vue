@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-1">
     <div v-for="(language, index) in JSON.parse(languageset)" :key="'language' + index">
       <div class="mb-05">
         <div class="flex justify-between text-base mb-03">

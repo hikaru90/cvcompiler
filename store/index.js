@@ -19,6 +19,7 @@ export const state = () => ({
   languageset:
     '[{"name":"German", "proficiency": "100", "duration": "Proficient|C2"},{"name":"English", "proficiency": "80", "duration": "Proficient|C1"}]',
   sections: [],
+  leftSections: [],
 });
 
 export const getters = {
@@ -71,6 +72,9 @@ export const getters = {
   sections(state) {
     return state.sections;
   },
+  leftSections(state) {
+    return state.leftSections;
+  },
 };
 
 export const mutations = {
@@ -102,7 +106,7 @@ export const mutations = {
     state.sections.splice(payload.to, 0, state.sections.splice(payload.from, 1)[0]);
   },
   addSection(state) {
-    state.sections.push({ type: "SectionMeilensteine", title: "Work Experience", content: [] });
+    state.sections.push({ type: "SectionMeilensteine", title: "Work Experience", margin: 0, content: [] });
   },
   deleteSection(state, payload){
     const array = state.sections
@@ -160,8 +164,29 @@ export const mutations = {
   },
 
   updateMargin(state, payload) {
-    console.log('update margin');
     state.sections[payload.sectionIndex][payload.field] = payload.content
+  },
+
+
+
+
+
+  updateLeftMargin(state, payload) {
+    state.leftSections[payload.sectionIndex][payload.field] = payload.content
+  },
+
+  addLeftSection(state) {
+    state.leftSections.push({ type: "SectionContent", title: "Content", margin: 0, text: '' });
+  },
+  moveLeftSection(state, payload) {
+    state.leftSections.splice(payload.to, 0, state.leftSections.splice(payload.from, 1)[0]);
+  },
+  updateLeftSection(state, payload) {
+    state.leftSections[payload.index][payload.field] = payload.content;
+  },
+  deleteLeftSection(state, payload){
+    const array = state.leftSections
+    array.splice(payload.index,1)
   },
 
 };

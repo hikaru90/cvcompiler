@@ -9,6 +9,7 @@
           </div>
             <Title>Sprachen</Title>
           <Languageset />
+          <LeftSections />
         </template>
         <template #right>
           <Sections />

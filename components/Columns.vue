@@ -1,6 +1,6 @@
 <template>
   <div :class="itemAlignment" class="flex">
-    <div class="w-1/3 flex-shrink-0 pr-1">
+    <div class="w-1/3 flex-shrink-0 pr-2">
       <slot name="left"></slot>
     </div>
     <div class="w-2/3 flex-shrink-0">

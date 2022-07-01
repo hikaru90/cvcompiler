@@ -10,7 +10,7 @@
           ></div>
         </div>
         <div class="flex-grow mb-05">
-          <div :style="{ color: color }" class="text-bigger">
+          <div :style="{ color: color }" class="text-bigger font-bold">
             {{ element.heading }}
           </div>
           <div v-if="element.subheading" class="text-sm">
@@ -44,7 +44,7 @@
               <div class="text-sm">
                 {{ milestone.date }}
               </div>
-              <div class="text-bigger">
+              <div class="text-bigger font-bold">
                 {{ milestone.title }}
               </div>
 

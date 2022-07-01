@@ -1,9 +1,9 @@
 <template>
   <div class="mb-1">
-    <Card>Rechter Content</Card>
+    <Card>Linker Content</Card>
     <div class="border border-gray-300 rounded-md p-1 pt-06">
-      <div v-for="(section, index) in sections" :key="section.type+'section' + index">
-        <Section
+      <div v-for="(section, index) in leftSections" :key="section.type+'section' + index">
+        <LeftSection
           :section="section"
           :index="index"
           class="mb-1"
@@ -12,7 +12,7 @@
       <div
         style="padding: 0.4em 0.75em"
         class="border border-dashed rounded-sm border-gray-400 mt-1 flex items-center justify-center hover:border-green hover:text-green cursor-pointer"
-        @click="addSection"
+        @click="addLeftSection"
       >
         + Section
       </div>
@@ -28,20 +28,10 @@
       };
     },
     computed: {
-      ...mapGetters(["sections"]),
+      ...mapGetters(["leftSections"]),
     },
     methods: {
-      ...mapMutations(["moveSection", "addSection"]),
-      // moveSectionUp(index) {
-      //   if (index > 0) {
-      //     this.moveSection({ from: index, to: index - 1 });
-      //   }
-      // },
-      // moveSectionDown(index) {
-      //   if (index < this.sectionCollection.length) {
-      //     this.moveSection({ from: index, to: index + 1 });
-      //   }
-      // },
+      ...mapMutations(["moveLeftSection", "addLeftSection"]),
     },
     mounted() {
     },

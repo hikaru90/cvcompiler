@@ -1,8 +1,8 @@
 <template>
-  <div class="border border-gray-300 mb-05 rounded-sm">
+  <div class="border border-gray-300 mb-05 rounded-sm m-05">
     <div class="flex flex-grow justify-between mb-05 p-05">
       <div class="flex flex-grow -m-05">
-        <Input :value="content.heading" @handle="handleInput('heading', ...arguments)" class="p-05 w-1/5"
+        <Input :value="content.heading" @handle="handleInput('heading', ...arguments)" class="p-05 w-1/5 flex-shrink-0"
           >Titel</Input
         >
         <Textarea

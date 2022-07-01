@@ -1,29 +1,31 @@
-@import 'vue-formulate';
-@import 'fonts';
+@import "vue-formulate";
+@import "fonts";
 
-*{
+* {
   // box-shadow: inset 0 0 0 1px rgb(212, 212, 212);
   @apply font-body;
 }
 
 @media print {
-  body{
+  body, html {
     background-color: white !important;
     @apply m-0;
   }
-  #editor{
+  #editor {
     @apply hidden;
   }
   body * {
     @apply invisible m-0;
   }
-  #a4-canvas, #a4-canvas * {
+  #a4-canvas,
+  #a4-canvas * {
     @apply visible;
   }
-  #container, #a4-container{
+  #container,
+  #a4-container {
     @apply m-0 p-0 w-full;
   }
-  #a4-container{
+  #a4-container {
     @apply static;
   }
   #a4-canvas {
@@ -31,6 +33,7 @@
   }
 
   @page {
+    page-break-before: always; /*This style rule makes every page element start at the top of a new page:*/
     margin: 6em 3em;
   }
 }

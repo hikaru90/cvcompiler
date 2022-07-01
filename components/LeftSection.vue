@@ -7,7 +7,7 @@
       <div class="flex flex-grow justify-between border-b border-gray-300 p-05">
         <div class="flex flex-grow -m-05">
           <Input
-            v-if="section.type == 'SectionMeilensteine'"
+            v-if="section.type == 'SectionContent'"
             :value="section.title"
             @handle="handleInput('title', ...arguments)"
             class="p-05 w-1/5"
@@ -16,7 +16,7 @@
           <Select
             :value="section.type"
             @handle="handleInput('type', ...arguments)"
-            :options="[{value: 'SectionMeilensteine', text: 'Meilensteine'},{value: 'SectionMargin', text: 'Margin'}]"
+            :options="[{value: 'SectionContent', text: 'Content'},{value: 'SectionLeftMargin', text: 'Abstand'}]"
             class="p-05 w-1/5"
             >Typ</Select
           >
@@ -75,21 +75,21 @@
     },
 
     methods: {
-      ...mapMutations(["updateSection", "moveSection", "deleteSection"]),
+      ...mapMutations(["updateLeftSection", "moveLeftSection", "deleteLeftSection"]),
       handleInput(field, payload) {
-        this.updateSection({ index: this.index, field: field, content: payload });
+        this.updateLeftSection({ index: this.index, field: field, content: payload });
       },
       handleDelete() {
-        this.deleteSection({index: this.index})
+        this.deleteLeftSection({index: this.index})
       },
       shiftUp() {
         if (this.index > 0) {
-          this.moveSection({ from: this.index, to: this.index - 1 });
+          this.moveLeftSection({ from: this.index, to: this.index - 1 });
         }
       },
       shiftDown() {
         if (this.index < this.sections.length) {
-          this.moveSection({ from: this.index, to: this.index + 1 });
+          this.moveLeftSection({ from: this.index, to: this.index + 1 });
         }
       },
     },
